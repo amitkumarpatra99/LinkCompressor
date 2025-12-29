@@ -7,18 +7,6 @@ A web application that converts long URLs into short, manageable links.
 - URL shortening with custom aliases
 - Quick copy to clipboard functionality
 - Secure and unique short URL generation
-- Analytics for link clicks (if implemented)
-- User-friendly interface
-
-# URL Shortener
-
-A web application that converts long URLs into short, manageable links.
-
-## Features
-
-- URL shortening with custom aliases
-- Quick copy to clipboard functionality
-- Secure and unique short URL generation
 - User-friendly interface
 - (Optional) Analytics for link clicks
 
@@ -66,24 +54,13 @@ A web application that converts long URLs into short, manageable links.
 - `public/` - Static assets
 - `app/api/` - API routes for backend logic
 
-## API Endpoints
+## API Documentation
 
-- `POST /api/generate`  
-  Create a new short URL.  
-  **Body:** `{ url: string, shorturl: string }`
+| HTTP Method | Endpoint | Description | Request Body |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/generate` | Generates a new short URL | `{ "url": "...", "shorturl": "..." }` |
+| `GET` | `/:shorturl` | Redirects to the original URL | N/A |
 
 ## License
 
 This project is licensed under the MIT License.
-- Frontend:
-  - HTML
-  - CSS
-  - JavaScript
-  - Tailwind CSS
-
-
-  
-- Backend:
-- Next JS
-- Data Base-  Mongo DB and Mongoose
- 
