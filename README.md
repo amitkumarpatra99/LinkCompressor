@@ -1,66 +1,85 @@
-# URL Shortener
+# Link Compressor
 
-A web application that converts long URLs into short, manageable links.
 
-## Features
+A modern, fast, and secure URL shortener built with Next.js and MongoDB. Transform long, messy URLs into sleek, shareable links with custom aliases.
 
-- URL shortening with custom aliases
-- Quick copy to clipboard functionality
-- Secure and unique short URL generation
-- User-friendly interface
-- (Optional) Analytics for link clicks
+## 🚀 Features
 
-## Tech Stack
+- **Custom Short Links**: Create personalized short URLs (e.g., `your.site/cool-link`).
+- **Instant Generation**: Fast and efficient link shortening.
+- **Clipboard Integration**: One-click copy functionality.
+- **Glassmorphism UI**: A premium, modern interface with smooth animations.
+- **Responsive Design**: Works perfectly on desktop and mobile.
 
-- **Frontend:**  
-  - Next.js (React)
-  - Tailwind CSS
+## 🛠️ Tech Stack
 
-- **Backend:**  
-  - Next.js API Routes
-  - MongoDB (with Mongoose)
+- **Frontend**: Next.js 15, React 18, Tailwind CSS, Framer Motion
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB
+- **Icons**: React Icons
 
-## Getting Started
+## 📸 Preview
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/yourusername/url_shortner.git
-   cd url_shortner
+![App Screenshot](public/project.png)
+
+## 🏁 Getting Started
+
+Follow these steps to set up the project locally.
+
+### Prerequisites
+
+- Node.js installed
+- MongoDB database (local or Atlas)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/amitkumarpatra99/Link_Compressor.git
+   cd Link_Compressor
    ```
 
-2. **Install dependencies:**
-   ```sh
+2. **Install dependencies**
+   ```bash
    npm install
    ```
 
-3. **Configure environment variables:**
-   - Create a `.env.local` file in the root directory.
-   - Add your MongoDB URI:
-     ```
-     MONGODB_URI=your_mongodb_connection_string
-     ```
+3. **Configure Environment**
+   Create a `.env.local` file in the root directory and add your MongoDB connection string:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   NEXT_PUBLIC_HOST=http://localhost:3000
+   ```
 
-4. **Run the development server:**
-   ```sh
+4. **Run the Server**
+   ```bash
    npm run dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+   Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-## Project Structure
+## 📁 Project Structure
 
-- `app/` - Main application pages and routes
-- `components/` - Reusable UI components (e.g., Navbar, Footer)
-- `lib/` - Database connection logic
-- `public/` - Static assets
-- `app/api/` - API routes for backend logic
+```
+├── app/
+│   ├── api/            # Backend API routes
+│   ├── Shorten/        # Link generation page
+│   └── page.js         # Landing page
+├── components/         # Reusable UI components (Navbar, etc.)
+├── lib/                # Database connection utilities
+├── public/             # Static assets (images, icons)
+└── ...
+```
 
-## API Documentation
+## 🔗 API Reference
 
-| HTTP Method | Endpoint | Description | Request Body |
+| Method | Endpoint | Description | Body |
 | :--- | :--- | :--- | :--- |
-| `POST` | `/api/generate` | Generates a new short URL | `{ "url": "...", "shorturl": "..." }` |
-| `GET` | `/:shorturl` | Redirects to the original URL | N/A |
+| `POST` | `/api/generate` | Create a new short link | `{ "url": "...", "shorturl": "..." }` |
+| `GET` | `/:shorturl` | Redirect to original URL | - |
 
-## License
+## 👨‍💻 Author
 
-This project is licensed under the MIT License.
+**Amit Kumar Patra**
+
+---
+*Built with ❤️ AMIT KUMAR PATRA*
