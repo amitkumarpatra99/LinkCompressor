@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiInfo, FiZap, FiExternalLink } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -17,17 +17,16 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { name: "Home", path: "/", icon: <FiHome /> },
+    { name: "About", path: "/about", icon: <FiInfo /> },
   ];
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50 transition-all duration-500 ease-in-out ${
-        scrolled
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50 transition-all duration-500 ease-in-out ${scrolled
           ? "bg-blue-950/80 border border-blue-500/40 shadow-xl shadow-blue-900/20 backdrop-blur-2xl"
           : "bg-white/10 border border-blue-400/30 backdrop-blur-lg shadow-lg"
-      } rounded-full px-6 md:px-10 py-4`}
+        } rounded-full px-6 md:px-10 py-4`}
     >
       <div className="flex items-center justify-between text-white">
         {/* LOGO */}
@@ -49,21 +48,20 @@ const Navbar = () => {
 
         {/* NAV LINKS */}
         <ul
-          className={`absolute md:static top-[70px] left-0 w-full md:w-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-center gap-6 md:gap-10 font-medium text-base md:text-lg ${
-            open
+          className={`absolute md:static top-[70px] left-0 w-full md:w-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-center gap-6 md:gap-10 font-medium text-base md:text-lg ${open
               ? "opacity-100 visible translate-y-0 bg-blue-950/90 backdrop-blur-2xl border border-blue-600/20 py-8 rounded-3xl shadow-2xl"
               : "opacity-0 invisible -translate-y-4 md:opacity-100 md:visible md:translate-y-0 md:bg-transparent md:shadow-none"
-          }`}
+            }`}
         >
           {links.map((link, index) => (
             <Link
               key={index}
               href={link.path}
               onClick={() => setOpen(false)}
-              className={`relative tracking-wide transition-all duration-300 hover:text-cyan-300 hover:scale-105 ${
-                pathname === link.path ? "text-cyan-400" : "text-white"
-              }`}
+              className={`relative flex items-center gap-2 tracking-wide transition-all duration-300 hover:text-cyan-300 hover:scale-105 ${pathname === link.path ? "text-cyan-400" : "text-white"
+                }`}
             >
+              {link.icon}
               {link.name}
               {pathname === link.path && (
                 <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>
@@ -74,13 +72,13 @@ const Navbar = () => {
           {/* BUTTONS */}
           <div className="flex flex-col md:flex-row gap-3 mt-4 md:mt-0">
             <Link href="/Shorten">
-              <button className="bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base shadow-md hover:shadow-cyan-400/40 transition-all duration-300">
-                Try Now
+              <button className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base shadow-md hover:shadow-cyan-400/40 transition-all duration-300">
+                <FiZap /> Try Now
               </button>
             </Link>
             <Link href="https://mrpatra.vercel.app/" target="_blank">
-              <button className="border border-cyan-400 hover:bg-cyan-400 hover:text-black text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base transition-all duration-300">
-                MR PATRA
+              <button className="flex items-center gap-2 border border-cyan-400 hover:bg-cyan-400 hover:text-black text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base transition-all duration-300">
+                <FiExternalLink /> MR PATRA
               </button>
             </Link>
           </div>

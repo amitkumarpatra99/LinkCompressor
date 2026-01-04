@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { FiZap, FiInfo } from "react-icons/fi";
 
 export default function Home() {
   return (
@@ -14,20 +15,20 @@ export default function Home() {
         </h1>
 
         <p className="text-lg md:text-2xl font-medium text-blue-200 max-w-2xl">
-          Transform long, messy URLs into sleek, shareable links — 
+          Transform long, messy URLs into sleek, shareable links —
           <br className="hidden md:block" /> fast, free, and privacy-focused.
         </p>
 
         {/* Buttons */}
         <div className="flex gap-4 mt-4">
           <Link href="/Shorten">
-            <button className="px-8 py-3 rounded-full text-white text-lg font-semibold bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 hover:scale-105">
-              Try Now 🚀
+            <button className="flex items-center gap-2 px-8 py-3 rounded-full text-white text-lg font-semibold bg-gradient-to-r from-blue-600 to-cyan-400 hover:from-cyan-400 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 hover:scale-105">
+              <FiZap /> Try Now
             </button>
           </Link>
           <Link href="/about">
-            <button className="px-8 py-3 rounded-full text-lg font-semibold border border-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300">
-              Learn More
+            <button className="flex items-center gap-2 px-8 py-3 rounded-full text-lg font-semibold border border-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300">
+              <FiInfo /> Learn More
             </button>
           </Link>
         </div>

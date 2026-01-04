@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ToastContainer, toast } from "react-toastify";
+import { FiLink, FiTag, FiCopy, FiCheck, FiZap } from "react-icons/fi";
 import "react-toastify/dist/ReactToastify.css";
 
 const Shorten = () => {
@@ -114,33 +115,38 @@ const Shorten = () => {
           Generate Your Link
         </h1>
 
-        <div className="flex flex-col items-center gap-4 mt-4">
-          <input
-            className="border border-blue-400/40 w-3/4 md:w-2/3 bg-white/20 text-white placeholder:text-blue-200 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
-            type="text"
-            placeholder="Enter your long URL"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            disabled={loading}
-          />
+        <div className="flex flex-col items-center gap-4 mt-4 w-full">
+          <div className="relative w-3/4 md:w-2/3">
+            <FiLink className="absolute left-5 top-1/2 -translate-y-1/2 text-blue-300 text-xl" />
+            <input
+              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+              type="text"
+              placeholder="Enter your long URL"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              disabled={loading}
+            />
+          </div>
 
-          <input
-            className="border border-blue-400/40 w-3/4 md:w-2/3 bg-white/20 text-white placeholder:text-blue-200 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
-            type="text"
-            placeholder="Enter your preferred short URL"
-            value={shorturl}
-            onChange={(e) => setShorturl(e.target.value)}
-            disabled={loading}
-          />
+          <div className="relative w-3/4 md:w-2/3">
+            <FiTag className="absolute left-5 top-1/2 -translate-y-1/2 text-blue-300 text-xl" />
+            <input
+              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+              type="text"
+              placeholder="Enter your preferred short URL"
+              value={shorturl}
+              onChange={(e) => setShorturl(e.target.value)}
+              disabled={loading}
+            />
+          </div>
 
           <button
             onClick={generate}
             disabled={loading}
-            className={`mt-3 px-8 py-3 rounded-full text-lg font-semibold text-white ${
-              loading ? "bg-gray-500 cursor-wait" : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
-            } transition-all duration-300`}
+            className={`mt-3 px-8 py-3 rounded-full text-lg font-semibold text-white flex items-center gap-2 ${loading ? "bg-gray-500 cursor-wait" : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
+              } transition-all duration-300`}
           >
-            {loading ? "Generating..." : "🔗 Generate Link"}
+            {loading ? <><FiZap className="animate-spin" /> Generating...</> : <><FiZap /> Generate Link</>}
           </button>
         </div>
 
@@ -155,11 +161,10 @@ const Shorten = () => {
 
               <button
                 onClick={handleCopy}
-                className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
-                  copied ? "bg-green-500 text-white scale-105" : "bg-blue-600 hover:bg-cyan-500 text-white"
-                }`}
+                className={`flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${copied ? "bg-green-500 text-white scale-105" : "bg-blue-600 hover:bg-cyan-500 text-white"
+                  }`}
               >
-                {copied ? "✅ Copied!" : "📋 Copy"}
+                {copied ? <><FiCheck /> Copied!</> : <><FiCopy /> Copy</>}
               </button>
             </div>
           </div>
