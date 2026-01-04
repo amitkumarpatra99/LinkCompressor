@@ -23,10 +23,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[94%] max-w-6xl z-50 transition-all duration-500 ease-in-out ${scrolled
-          ? "bg-blue-950/80 border border-blue-500/40 shadow-xl shadow-blue-900/20 backdrop-blur-2xl"
-          : "bg-white/10 border border-blue-400/30 backdrop-blur-lg shadow-lg"
-        } rounded-full px-6 md:px-10 py-4`}
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] md:w-[94%] max-w-6xl z-50 transition-all duration-500 ease-in-out ${scrolled
+        ? "bg-blue-950/80 border border-blue-500/40 shadow-xl shadow-blue-900/20 backdrop-blur-2xl"
+        : "bg-white/10 border border-blue-400/30 backdrop-blur-lg shadow-lg"
+        } rounded-full px-5 py-3 md:px-10 md:py-4`}
     >
       <div className="flex items-center justify-between text-white">
         {/* LOGO */}
@@ -49,8 +49,8 @@ const Navbar = () => {
         {/* NAV LINKS */}
         <ul
           className={`absolute md:static top-[70px] left-0 w-full md:w-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-center gap-6 md:gap-10 font-medium text-base md:text-lg ${open
-              ? "opacity-100 visible translate-y-0 bg-blue-950/90 backdrop-blur-2xl border border-blue-600/20 py-8 rounded-3xl shadow-2xl"
-              : "opacity-0 invisible -translate-y-4 md:opacity-100 md:visible md:translate-y-0 md:bg-transparent md:shadow-none"
+            ? "opacity-100 visible translate-y-0 bg-blue-950/90 backdrop-blur-2xl border border-blue-600/20 py-8 rounded-3xl shadow-2xl"
+            : "opacity-0 invisible -translate-y-4 md:opacity-100 md:visible md:translate-y-0 md:bg-transparent md:shadow-none"
             }`}
         >
           {links.map((link, index) => (

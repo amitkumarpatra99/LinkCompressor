@@ -12,10 +12,10 @@ const About = () => {
       </div>
 
       {/* 🧊 Main Container */}
-      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-between bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl shadow-blue-900/40 p-10 md:p-16 gap-10 transition-all duration-500 hover:shadow-cyan-500/30 hover:scale-[1.01]">
+      <div className="max-w-5xl w-full flex flex-col md:flex-row items-center justify-between bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl shadow-blue-900/40 p-6 md:p-16 gap-10 transition-all duration-500 hover:shadow-cyan-500/30 hover:scale-[1.01]">
         {/* 🔹 About Section */}
         <div className="flex-1 flex flex-col items-start gap-6">
-          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             LINK COMPRESSOR
           </h1>
           <p className="text-slate-200 text-lg leading-relaxed">
@@ -26,7 +26,7 @@ const About = () => {
             No signups, no tracking — just fast, reliable URL compression.
           </p>
 
-         
+
 
           <Link href="/Shorten">
             <button className="mt-6 px-8 py-3 rounded-full text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
@@ -36,7 +36,7 @@ const About = () => {
         </div>
 
         {/* 🔹 Contact Section */}
-        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-5">
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-5 w-full">
           <h2 className="text-3xl font-bold text-cyan-400">Contact Us</h2>
           <p className="text-slate-200 text-base font-medium">
             Facing issues with <span className="text-cyan-300">Link Compressor</span>?
@@ -61,29 +61,23 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
             <Link
               href="https://mrpatra.vercel.app/"
               target="_blank"
-              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium rounded-full text-sm px-5 py-2.5 hover:scale-105 hover:shadow-md hover:shadow-cyan-500/30 transition-all duration-300"
+              className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium rounded-full text-sm px-5 py-2.5 hover:scale-105 hover:shadow-md hover:shadow-cyan-500/30 transition-all duration-300 flex justify-center items-center"
             >
               💬 MY WEB
             </Link>
             <Link
               href="mailto:amitkumarpatraaa@gmail.com"
-              className="border border-cyan-400 text-cyan-300 font-medium rounded-full text-sm px-5 py-2.5 hover:bg-cyan-400 hover:text-white transition-all duration-300"
+              className="border border-cyan-400 text-cyan-300 font-medium rounded-full text-sm px-5 py-2.5 hover:bg-cyan-400 hover:text-white transition-all duration-300 flex justify-center items-center"
             >
               📩 Send Mail
             </Link>
           </div>
         </div>
       </div>
-
-      {/* 🔹 Footer */}
-      <footer className="mt-10 text-slate-400 text-sm">
-        © {new Date().getFullYear()} Link Compressor by{" "}
-        <span className="text-cyan-300 font-semibold">Amit Kumar Patra</span>
-      </footer>
     </main>
   );
 };

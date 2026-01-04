@@ -100,7 +100,7 @@ const Shorten = () => {
   };
 
   return (
-    <main className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-6 py-20 relative overflow-hidden">
+    <main className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-4 py-20 relative overflow-hidden">
       <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false} />
 
       {/* Background glow */}
@@ -110,16 +110,16 @@ const Shorten = () => {
       </div>
 
       {/* Main card */}
-      <div className="mx-auto max-w-3xl w-full rounded-3xl border border-blue-700/50 bg-white/10 backdrop-blur-xl p-10 flex flex-col gap-6 shadow-2xl shadow-blue-900/30">
-        <h1 className="text-center text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+      <div className="mx-auto max-w-3xl w-full rounded-3xl border border-blue-700/50 bg-white/10 backdrop-blur-xl p-6 md:p-10 flex flex-col gap-6 shadow-2xl shadow-blue-900/30">
+        <h1 className="text-center text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
           Generate Your Link
         </h1>
 
         <div className="flex flex-col items-center gap-4 mt-4 w-full">
-          <div className="relative w-3/4 md:w-2/3">
+          <div className="relative w-full md:w-2/3">
             <FiLink className="absolute left-5 top-1/2 -translate-y-1/2 text-blue-300 text-xl" />
             <input
-              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
               type="text"
               placeholder="Enter your long URL"
               value={url}
@@ -128,10 +128,10 @@ const Shorten = () => {
             />
           </div>
 
-          <div className="relative w-3/4 md:w-2/3">
+          <div className="relative w-full md:w-2/3">
             <FiTag className="absolute left-5 top-1/2 -translate-y-1/2 text-blue-300 text-xl" />
             <input
-              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+              className="w-full border border-blue-400/40 bg-white/20 text-white placeholder:text-blue-200 rounded-full pl-12 pr-6 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all text-sm md:text-base"
               type="text"
               placeholder="Enter your preferred short URL"
               value={shorturl}
@@ -143,7 +143,7 @@ const Shorten = () => {
           <button
             onClick={generate}
             disabled={loading}
-            className={`mt-3 px-8 py-3 rounded-full text-lg font-semibold text-white flex items-center gap-2 ${loading ? "bg-gray-500 cursor-wait" : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
+            className={`mt-3 w-full md:w-auto flex justify-center items-center gap-2 px-8 py-3 rounded-full text-lg font-semibold text-white ${loading ? "bg-gray-500 cursor-wait" : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/30"
               } transition-all duration-300`}
           >
             {loading ? <><FiZap className="animate-spin" /> Generating...</> : <><FiZap /> Generate Link</>}
