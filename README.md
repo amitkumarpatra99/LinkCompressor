@@ -1,4 +1,4 @@
-# Link Compressor...
+# Link Compressor 🔗
 
 
 A modern, fast, and secure URL shortener built with Next.js and MongoDB. Transform long, messy URLs into sleek, shareable links with custom aliases.
